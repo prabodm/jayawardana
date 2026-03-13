@@ -1,0 +1,1873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jayawardhana Sweet House & Hotel | Alawwa, Sri Lanka</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #FDF8F3;
+      --bg-dark: #1A1612;
+      --fg: #2D2520;
+      --fg-dark: #F5F0EB;
+      --muted: #8B7355;
+      --accent: #C4704F;
+      --accent-hover: #A85A3A;
+      --gold: #D4A853;
+      --gold-dark: #B8923D;
+      --card: #FFFFFF;
+      --card-dark: #2A2420;
+      --border: #E5DCD2;
+      --border-dark: #3D3530;
+      --success: #22C55E;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background-color: var(--bg);
+      color: var(--fg);
+      overflow-x: hidden;
+    }
+
+    .font-display {
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    .bg-pattern {
+      background-image: 
+        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(196, 112, 79, 0.12), transparent),
+        radial-gradient(ellipse 60% 40% at 100% 100%, rgba(212, 168, 83, 0.08), transparent);
+    }
+
+    .hero-bg {
+      background: linear-gradient(135deg, #2D2520 0%, #1A1612 50%, #2A2420 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-bg::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L30 60M0 30L60 30' stroke='%23D4A853' stroke-width='0.5' opacity='0.1'/%3E%3C/svg%3E");
+      opacity: 0.3;
+    }
+
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 80%;
+      height: 150%;
+      background: radial-gradient(ellipse, rgba(212, 168, 83, 0.12) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .float-element {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(2deg); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+                  transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+      color: white;
+      padding: 14px 32px;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(196, 112, 79, 0.3);
+    }
+
+    .btn-primary:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .btn-secondary {
+      border: 2px solid var(--gold);
+      color: var(--gold);
+      padding: 12px 28px;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      background: transparent;
+      cursor: pointer;
+    }
+
+    .btn-secondary:hover {
+      background: var(--gold);
+      color: #1A1612;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 32px rgba(45, 37, 32, 0.08);
+    }
+
+    .service-card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent), var(--gold));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+
+    .service-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    /* Menu Card */
+    .menu-card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .menu-card-image {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+    }
+
+    .menu-card-image img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .menu-card:hover .menu-card-image img {
+      transform: scale(1.08);
+    }
+
+    .menu-card-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: var(--accent);
+      color: white;
+      padding: 4px 12px;
+      border-radius: 100px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    /* Quantity Controls */
+    .qty-controls {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: #F5F0EB;
+      border-radius: 100px;
+      padding: 4px;
+    }
+
+    .qty-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: white;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      color: var(--accent);
+    }
+
+    .qty-btn:hover {
+      background: var(--accent);
+      color: white;
+    }
+
+    .qty-value {
+      min-width: 24px;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    /* Cart Badge */
+    .cart-badge {
+      position: absolute;
+      top: -6px;
+      right: -6px;
+      background: var(--accent);
+      color: white;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      font-size: 11px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Modal */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(26, 22, 18, 0.7);
+      backdrop-filter: blur(4px);
+      z-index: 100;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.9);
+      background: white;
+      border-radius: 24px;
+      max-width: 500px;
+      width: 90%;
+      max-height: 90vh;
+      overflow-y: auto;
+      z-index: 101;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .modal.active {
+      opacity: 1;
+      visibility: visible;
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    /* Form Inputs */
+    .form-input {
+      width: 100%;
+      padding: 14px 16px;
+      border: 2px solid var(--border);
+      border-radius: 12px;
+      font-size: 15px;
+      transition: all 0.2s ease;
+      background: white;
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 4px rgba(196, 112, 79, 0.1);
+    }
+
+    .form-input::placeholder {
+      color: #A89B8C;
+    }
+
+    .form-label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 8px;
+      font-size: 14px;
+      color: var(--fg);
+    }
+
+    /* Menu Tabs */
+    .menu-tab {
+      padding: 12px 24px;
+      border-radius: 100px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: 2px solid transparent;
+      background: transparent;
+    }
+
+    .menu-tab:hover {
+      border-color: var(--border);
+    }
+
+    .menu-tab.active {
+      background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+      color: white;
+    }
+
+    /* Nav Link */
+    .nav-link {
+      position: relative;
+      padding: 8px 0;
+      color: rgba(255, 255, 255, 0.8);
+      transition: color 0.3s ease;
+      text-decoration: none;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: white;
+    }
+
+    .nav-link:hover::after {
+      transform: scaleX(1);
+    }
+
+    /* Stars */
+    .star { color: var(--gold); }
+
+    /* Hours Badge */
+    .hours-badge {
+      background: linear-gradient(135deg, rgba(212, 168, 83, 0.2), rgba(196, 112, 79, 0.1));
+      border: 1px solid rgba(212, 168, 83, 0.3);
+    }
+
+    /* Decorative Line */
+    .deco-line {
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--gold));
+      border-radius: 2px;
+    }
+
+    /* Floating Action Buttons */
+    .fab-container {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 50;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .fab {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .fab:hover {
+      transform: scale(1.1);
+    }
+
+    .fab-whatsapp { background: #25D366; }
+    .fab-call { background: var(--accent); }
+    .fab-cart { 
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark)); 
+      position: relative;
+    }
+
+    /* Mobile Menu */
+    .mobile-menu {
+      position: fixed;
+      inset: 0;
+      background: #1A1612;
+      z-index: 90;
+      transform: translateX(100%);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .mobile-menu.active {
+      transform: translateX(0);
+    }
+
+    /* Gallery */
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+
+    .gallery-item img {
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+
+    .gallery-item::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(26, 22, 18, 0.8), transparent 50%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .gallery-item:hover::after {
+      opacity: 1;
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 24px;
+      color: white;
+      transform: translateY(20px);
+      opacity: 0;
+      transition: all 0.3s ease;
+      z-index: 2;
+    }
+
+    .gallery-item:hover .gallery-overlay {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* Lightbox */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.95);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .lightbox.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90vh;
+      border-radius: 8px;
+    }
+
+    /* Review Card */
+    .review-card {
+      position: relative;
+    }
+
+    .review-card::before {
+      content: '"';
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 120px;
+      color: var(--gold);
+      opacity: 0.2;
+      position: absolute;
+      top: -20px;
+      left: 10px;
+      line-height: 1;
+    }
+
+    /* Focus States */
+    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 2px;
+    }
+
+    /* Order Summary in Modal */
+    .order-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .order-item:last-child {
+      border-bottom: none;
+    }
+
+    /* Success Animation */
+    @keyframes successPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    .success-animation {
+      animation: successPulse 0.5s ease;
+    }
+
+    /* Sri Lanka Districts Dropdown */
+    select.form-input {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%238B7355' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      background-size: 16px;
+      padding-right: 40px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="navbar">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <a href="#" class="flex items-center gap-3">
+          <div class="w-12 h-12 rounded-full bg-gradient-to-br from-[#C4704F] to-[#D4A853] flex items-center justify-center">
+            <span class="font-display text-xl text-white font-bold">J</span>
+          </div>
+          <div class="hidden sm:block">
+            <span class="font-display text-lg font-semibold text-white">Jayawardhana</span>
+            <span class="block text-xs text-white/60 -mt-1">Sweet House & Hotel</span>
+          </div>
+        </a>
+
+        <div class="hidden md:flex items-center gap-8">
+          <a href="#home" class="nav-link">Home</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#menu" class="nav-link">Menu</a>
+          <a href="#gallery" class="nav-link">Gallery</a>
+          <a href="#reviews" class="nav-link">Reviews</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </div>
+
+        <div class="flex items-center gap-4">
+          <a href="tel:+94718667238" class="hidden sm:flex items-center gap-2 text-white/80 hover:text-white transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+            </svg>
+            <span class="text-sm">+94 71 866 7238</span>
+          </a>
+          
+          <button id="menuBtn" class="md:hidden w-10 h-10 flex items-center justify-center text-white" aria-label="Toggle menu">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="flex flex-col h-full p-8">
+      <div class="flex justify-end">
+        <button id="closeMenuBtn" class="w-10 h-10 flex items-center justify-center text-white" aria-label="Close menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+      <div class="flex flex-col gap-6 mt-12">
+        <a href="#home" class="text-2xl font-display text-white/80 hover:text-white transition-colors mobile-link">Home</a>
+        <a href="#about" class="text-2xl font-display text-white/80 hover:text-white transition-colors mobile-link">About</a>
+        <a href="#menu" class="text-2xl font-display text-white/80 hover:text-white transition-colors mobile-link">Menu</a>
+        <a href="#gallery" class="text-2xl font-display text-white/80 hover:text-white transition-colors mobile-link">Gallery</a>
+        <a href="#reviews" class="text-2xl font-display text-white/80 hover:text-white transition-colors mobile-link">Reviews</a>
+        <a href="#contact" class="text-2xl font-display text-white/80 hover:text-white transition-colors mobile-link">Contact</a>
+      </div>
+      <div class="mt-auto">
+        <p class="text-white/40 text-sm">Open Daily: 7:00 AM - 10:30 PM</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero-bg min-h-screen flex items-center relative">
+    <div class="absolute inset-0 overflow-hidden">
+      <div class="absolute top-20 left-10 w-72 h-72 bg-[#D4A853]/10 rounded-full blur-3xl float-element"></div>
+      <div class="absolute bottom-20 right-10 w-96 h-96 bg-[#C4704F]/10 rounded-full blur-3xl float-element" style="animation-delay: -2s;"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 relative z-10">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="reveal">
+            <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full hours-badge text-[#D4A853] text-sm font-medium mb-6">
+              <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+              Open Now | 7:00 AM - 10:30 PM
+            </span>
+          </div>
+          
+          <h1 class="reveal reveal-delay-1 font-display text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6">
+            Jayawardhana<br>
+            <span class="text-[#D4A853]">Sweet House</span><br>
+            & Hotel
+          </h1>
+          
+          <p class="reveal reveal-delay-2 text-lg text-white/70 max-w-lg mb-8">
+            A cherished destination in Alawwa for authentic Sri Lankan cuisine, freshly made sweets, 
+            and warm hospitality. Order online for pickup or delivery!
+          </p>
+
+          <div class="reveal reveal-delay-3 flex flex-wrap gap-4 mb-8">
+            <a href="#menu" class="btn-primary">
+              <span>Order Online</span>
+            </a>
+            <a href="#contact" class="btn-secondary">
+              Get Directions
+            </a>
+          </div>
+
+          <div class="reveal reveal-delay-4 flex items-center gap-6">
+            <div class="flex items-center gap-1">
+              <span class="star text-lg">&#9733;</span>
+              <span class="star text-lg">&#9733;</span>
+              <span class="star text-lg">&#9733;</span>
+              <span class="star text-lg">&#9733;</span>
+              <span class="text-white/40 text-lg">&#9733;</span>
+            </div>
+            <span class="text-white/60 text-sm">4.1 Rating | 100+ Reviews on Google</span>
+          </div>
+        </div>
+
+        <div class="reveal reveal-delay-2 relative hidden lg:block">
+          <div class="relative">
+            <div class="absolute -inset-4 bg-gradient-to-br from-[#C4704F]/20 to-[#D4A853]/20 rounded-3xl blur-xl"></div>
+            <div class="relative bg-gradient-to-br from-[#3D3530] to-[#2A2420] rounded-2xl p-8 border border-white/10">
+              <div class="grid grid-cols-2 gap-4">
+                <div class="aspect-square rounded-xl bg-gradient-to-br from-[#C4704F]/30 to-[#C4704F]/10 flex items-center justify-center">
+                  <div class="text-center">
+                    <svg class="w-12 h-12 mx-auto text-[#D4A853] mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                    </svg>
+                    <span class="text-white/60 text-sm">Fresh Sweets</span>
+                  </div>
+                </div>
+                <div class="aspect-square rounded-xl bg-gradient-to-br from-[#D4A853]/30 to-[#D4A853]/10 flex items-center justify-center">
+                  <div class="text-center">
+                    <svg class="w-12 h-12 mx-auto text-[#C4704F] mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    <span class="text-white/60 text-sm">Rice & Curry</span>
+                  </div>
+                </div>
+                <div class="aspect-square rounded-xl bg-gradient-to-br from-[#8B7355]/30 to-[#8B7355]/10 flex items-center justify-center">
+                  <div class="text-center">
+                    <svg class="w-12 h-12 mx-auto text-[#D4A853] mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                    </svg>
+                    <span class="text-white/60 text-sm">Dine-in</span>
+                  </div>
+                </div>
+                <div class="aspect-square rounded-xl bg-gradient-to-br from-[#6B5344]/30 to-[#6B5344]/10 flex items-center justify-center">
+                  <div class="text-center">
+                    <svg class="w-12 h-12 mx-auto text-[#C4704F] mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/>
+                    </svg>
+                    <span class="text-white/60 text-sm">Takeaway</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/40 animate-bounce">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-24 bg-pattern relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div class="reveal">
+          <div class="deco-line mb-6"></div>
+          <h2 class="font-display text-4xl sm:text-5xl font-bold mb-6">
+            A Taste of <span class="text-[#C4704F]">Authentic</span> Sri Lankan Hospitality
+          </h2>
+          <p class="text-lg text-[#8B7355] mb-6">
+            Located on the bustling Ambepussa-Kurunegala Road in Alawwa, Jayawardhana Sweet House & Hotel 
+            has been serving the community and travelers alike with delicious Sri Lankan cuisine and 
+            freshly made sweets.
+          </p>
+          <p class="text-lg text-[#8B7355] mb-8">
+            Just steps away from Alawwa Railway Station, we're the perfect stop for a hearty breakfast, 
+            a quick meal between journeys, or a leisurely dining experience with family and friends.
+          </p>
+          
+          <div class="grid grid-cols-2 gap-6">
+            <div class="p-4 rounded-xl bg-white border border-[#E5DCD2]">
+              <div class="text-3xl font-display font-bold text-[#C4704F]">15+</div>
+              <div class="text-sm text-[#8B7355]">Years of Service</div>
+            </div>
+            <div class="p-4 rounded-xl bg-white border border-[#E5DCD2]">
+              <div class="text-3xl font-display font-bold text-[#C4704F]">100+</div>
+              <div class="text-sm text-[#8B7355]">Daily Customers</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal reveal-delay-2">
+          <div class="relative">
+            <div class="absolute -inset-4 bg-gradient-to-br from-[#C4704F]/10 to-[#D4A853]/10 rounded-3xl blur-2xl"></div>
+            <div class="relative grid grid-cols-2 gap-4">
+              <div class="space-y-4">
+                <div class="gallery-item aspect-[4/5]">
+                  <img src="https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=400&h=500&fit=crop" 
+                       alt="Sri Lankan rice and curry" 
+                       class="w-full h-full object-cover">
+                  <div class="gallery-overlay">
+                    <span class="text-sm font-medium">Traditional Rice & Curry</span>
+                  </div>
+                </div>
+                <div class="gallery-item aspect-square">
+                  <img src="https://images.unsplash.com/photo-1559598467-f8b76c8155d0?w=400&h=400&fit=crop" 
+                       alt="Sweets and desserts" 
+                       class="w-full h-full object-cover">
+                  <div class="gallery-overlay">
+                    <span class="text-sm font-medium">Fresh Sweets</span>
+                  </div>
+                </div>
+              </div>
+              <div class="space-y-4 pt-8">
+                <div class="gallery-item aspect-square">
+                  <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=400&h=400&fit=crop" 
+                       alt="Breakfast spread" 
+                       class="w-full h-full object-cover">
+                  <div class="gallery-overlay">
+                    <span class="text-sm font-medium">Breakfast Buffet</span>
+                  </div>
+                </div>
+                <div class="gallery-item aspect-[4/5]">
+                  <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=400&h=500&fit=crop" 
+                       alt="Restaurant interior" 
+                       class="w-full h-full object-cover">
+                  <div class="gallery-overlay">
+                    <span class="text-sm font-medium">Cozy Interior</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="py-24 bg-white relative overflow-hidden">
+    <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#E5DCD2] to-transparent"></div>
+    <div class="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#E5DCD2] to-transparent"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 reveal">
+        <div class="deco-line mx-auto mb-6"></div>
+        <h2 class="font-display text-4xl sm:text-5xl font-bold mb-4">Our Services</h2>
+        <p class="text-[#8B7355] max-w-2xl mx-auto">
+          From early morning breakfast to late evening meals, we offer a variety of dining options 
+          to suit every need.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="card service-card p-6 reveal reveal-delay-1">
+          <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-[#C4704F]/20 to-[#C4704F]/5 flex items-center justify-center mb-4">
+            <svg class="w-7 h-7 text-[#C4704F]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+            </svg>
+          </div>
+          <h3 class="font-display text-xl font-semibold mb-2">Dine-in</h3>
+          <p class="text-[#8B7355] text-sm">Comfortable seating with a cozy atmosphere for families and friends.</p>
+        </div>
+
+        <div class="card service-card p-6 reveal reveal-delay-2">
+          <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-[#D4A853]/20 to-[#D4A853]/5 flex items-center justify-center mb-4">
+            <svg class="w-7 h-7 text-[#D4A853]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"/>
+            </svg>
+          </div>
+          <h3 class="font-display text-xl font-semibold mb-2">Takeaway</h3>
+          <p class="text-[#8B7355] text-sm">Quick pickup for travelers on the go. Freshly packed with care.</p>
+        </div>
+
+        <div class="card service-card p-6 reveal reveal-delay-3">
+          <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-[#8B7355]/20 to-[#8B7355]/5 flex items-center justify-center mb-4">
+            <svg class="w-7 h-7 text-[#8B7355]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+            </svg>
+          </div>
+          <h3 class="font-display text-xl font-semibold mb-2">Breakfast</h3>
+          <p class="text-[#8B7355] text-sm">Traditional Sri Lankan breakfast with string hoppers, pittu, and more.</p>
+        </div>
+
+        <div class="card service-card p-6 reveal reveal-delay-4">
+          <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-[#C4704F]/20 to-[#D4A853]/10 flex items-center justify-center mb-4">
+            <svg class="w-7 h-7 text-[#C4704F]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.701 2.701 0 00-1.5-.454M9 6v2m3-2v2m3-2v2M9 3h.01M12 3h.01M15 3h.01M21 21v-7a2 2 0 00-2-2H5a2 2 0 00-2 2v7h18zm-3-9v-2a2 2 0 00-2-2H8a2 2 0 00-2 2v2h12z"/>
+            </svg>
+          </div>
+          <h3 class="font-display text-xl font-semibold mb-2">Sweets & Bakery</h3>
+          <p class="text-[#8B7355] text-sm">Freshly made traditional Sri Lankan sweets and baked goods daily.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu Section -->
+  <section id="menu" class="py-24 bg-pattern relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 reveal">
+        <div class="deco-line mx-auto mb-6"></div>
+        <h2 class="font-display text-4xl sm:text-5xl font-bold mb-4">Our Menu</h2>
+        <p class="text-[#8B7355] max-w-2xl mx-auto">
+          Explore our selection of authentic Sri Lankan dishes. Add items to your cart and order via WhatsApp!
+        </p>
+      </div>
+
+      <!-- Menu Tabs -->
+      <div class="flex flex-wrap justify-center gap-3 mb-12 reveal">
+        <button class="menu-tab active" data-category="all">All Items</button>
+        <button class="menu-tab" data-category="breakfast">Breakfast</button>
+        <button class="menu-tab" data-category="rice">Rice & Curry</button>
+        <button class="menu-tab" data-category="sweets">Sweets</button>
+        <button class="menu-tab" data-category="beverages">Beverages</button>
+        <button class="menu-tab" data-category="shorteats">Short Eats</button>
+      </div>
+
+      <!-- Menu Grid -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="menuGrid">
+        <!-- Menu items populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="py-24 bg-white relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 reveal">
+        <div class="deco-line mx-auto mb-6"></div>
+        <h2 class="font-display text-4xl sm:text-5xl font-bold mb-4">Gallery</h2>
+        <p class="text-[#8B7355] max-w-2xl mx-auto">
+          Take a visual tour of our restaurant, dishes, and the warm ambiance that awaits you.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 reveal">
+        <div class="gallery-item aspect-square" onclick="openLightbox(this)">
+          <img src="https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=400&h=400&fit=crop" 
+               alt="Sri Lankan Rice and Curry" class="w-full h-full object-cover">
+          <div class="gallery-overlay">
+            <span class="text-sm font-medium">Rice & Curry</span>
+          </div>
+        </div>
+        <div class="gallery-item aspect-square md:col-span-2 md:row-span-2" onclick="openLightbox(this)">
+          <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=800&fit=crop" 
+               alt="Restaurant Interior" class="w-full h-full object-cover">
+          <div class="gallery-overlay">
+            <span class="text-sm font-medium">Restaurant Interior</span>
+          </div>
+        </div>
+        <div class="gallery-item aspect-square" onclick="openLightbox(this)">
+          <img src="https://images.unsplash.com/photo-1559598467-f8b76c8155d0?w=400&h=400&fit=crop" 
+               alt="Sweets" class="w-full h-full object-cover">
+          <div class="gallery-overlay">
+            <span class="text-sm font-medium">Traditional Sweets</span>
+          </div>
+        </div>
+        <div class="gallery-item aspect-square" onclick="openLightbox(this)">
+          <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=400&h=400&fit=crop" 
+               alt="Breakfast" class="w-full h-full object-cover">
+          <div class="gallery-overlay">
+            <span class="text-sm font-medium">Breakfast Spread</span>
+          </div>
+        </div>
+        <div class="gallery-item aspect-square" onclick="openLightbox(this)">
+          <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&h=400&fit=crop" 
+               alt="Food Preparation" class="w-full h-full object-cover">
+          <div class="gallery-overlay">
+            <span class="text-sm font-medium">Fresh Preparation</span>
+          </div>
+        </div>
+        <div class="gallery-item aspect-square" onclick="openLightbox(this)">
+          <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&h=400&fit=crop" 
+               alt="Coffee" class="w-full h-full object-cover">
+          <div class="gallery-overlay">
+            <span class="text-sm font-medium">Ceylon Tea & Coffee</span>
+          </div>
+        </div>
+        <div class="gallery-item aspect-square" onclick="openLightbox(this)">
+          <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=400&h=400&fit=crop" 
+               alt="Short Eats" class="w-full h-full object-cover">
+          <div class="gallery-overlay">
+            <span class="text-sm font-medium">Short Eats</span>
+          </div>
+        </div>
+        <div class="gallery-item aspect-square" onclick="openLightbox(this)">
+          <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?w=400&h=400&fit=crop" 
+               alt="Desserts" class="w-full h-full object-cover">
+          <div class="gallery-overlay">
+            <span class="text-sm font-medium">Desserts</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews Section -->
+  <section id="reviews" class="py-24 bg-gradient-to-b from-[#FDF8F3] to-white relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 reveal">
+        <div class="deco-line mx-auto mb-6"></div>
+        <h2 class="font-display text-4xl sm:text-5xl font-bold mb-4">What Our Customers Say</h2>
+        <p class="text-[#8B7355] max-w-2xl mx-auto">
+          Don't just take our word for it — hear from our valued customers.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="card review-card p-8 reveal reveal-delay-1">
+          <div class="flex items-center gap-1 mb-4">
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+          </div>
+          <p class="text-[#5A4A3A] mb-6 italic">
+            "Good Sri Lankan food and friendly staff. The breakfast buffet is amazing with a great variety of rice and curry options. Highly recommended for anyone passing through Alawwa!"
+          </p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-[#C4704F] to-[#D4A853] flex items-center justify-center text-white font-semibold">
+              K
+            </div>
+            <div>
+              <div class="font-semibold text-sm">Kamal Perera</div>
+              <div class="text-xs text-[#8B7355]">Local Guide</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card review-card p-8 reveal reveal-delay-2">
+          <div class="flex items-center gap-1 mb-4">
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="text-[#D4A853]/30">&#9733;</span>
+          </div>
+          <p class="text-[#5A4A3A] mb-6 italic">
+            "Tasty breakfast buffet with rice and curry. Perfect stop for travelers near the railway station. The milk coffee here is excellent, and the staff is very accommodating."
+          </p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-[#D4A853] to-[#8B7355] flex items-center justify-center text-white font-semibold">
+              S
+            </div>
+            <div>
+              <div class="font-semibold text-sm">Sunil Fernando</div>
+              <div class="text-xs text-[#8B7355]">Frequent Traveler</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card review-card p-8 reveal reveal-delay-3">
+          <div class="flex items-center gap-1 mb-4">
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+          </div>
+          <p class="text-[#5A4A3A] mb-6 italic">
+            "Good place to stop for a quick bite. The sweets are freshly made and delicious. A wonderful spot for authentic Sri Lankan cuisine. The atmosphere is warm and welcoming."
+          </p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-[#8B7355] to-[#C4704F] flex items-center justify-center text-white font-semibold">
+              N
+            </div>
+            <div>
+              <div class="font-semibold text-sm">Nimal Silva</div>
+              <div class="text-xs text-[#8B7355]">Verified Customer</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-24 bg-white relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-16">
+        <div class="reveal">
+          <div class="deco-line mb-6"></div>
+          <h2 class="font-display text-4xl sm:text-5xl font-bold mb-6">Visit Us Today</h2>
+          <p class="text-[#8B7355] mb-8">
+            Conveniently located on Ambepussa-Kurunegala Road in Alawwa, just steps away from 
+            the Alawwa Railway Station. We're easy to find and always ready to serve you.
+          </p>
+
+          <div class="space-y-6">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#C4704F]/20 to-[#C4704F]/5 flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-[#C4704F]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-semibold mb-1">Address</h3>
+                <p class="text-[#8B7355]">Ambepussa–Kurunegala Road<br>Alawwa, Sri Lanka</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#D4A853]/20 to-[#D4A853]/5 flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-[#D4A853]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-semibold mb-1">Phone</h3>
+                <a href="tel:+94718667238" class="text-[#8B7355] hover:text-[#C4704F] transition-colors">+94 71 866 7238</a>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#8B7355]/20 to-[#8B7355]/5 flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-[#8B7355]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-semibold mb-1">Opening Hours</h3>
+                <p class="text-[#8B7355]">Daily: 7:00 AM – 10:30 PM</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#C4704F]/20 to-[#D4A853]/10 flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-[#C4704F]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-semibold mb-1">Nearby Landmarks</h3>
+                <ul class="text-[#8B7355] space-y-1">
+                  <li>Alawwa Railway Station (~200m)</li>
+                  <li>Alawwa Central Bus Stand</li>
+                  <li>Cinemaal Movie Theater</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal reveal-delay-2">
+          <div class="rounded-2xl overflow-hidden border border-[#E5DCD2] h-[400px] lg:h-full min-h-[400px]">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.5854!2d80.23972!3d7.29182!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zN8KwMTcnMzAuNiJOIDgwwrAxNCcyMy4wIkU!5e0!3m2!1sen!2slk!4v1620000000000!5m2!1sen!2slk"
+              width="100%" 
+              height="100%" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Jayawardhana Sweet House & Hotel Location">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#1A1612] text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-4 gap-12">
+        <div class="md:col-span-2">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-[#C4704F] to-[#D4A853] flex items-center justify-center">
+              <span class="font-display text-xl text-white font-bold">J</span>
+            </div>
+            <div>
+              <span class="font-display text-lg font-semibold">Jayawardhana</span>
+              <span class="block text-xs text-white/60 -mt-1">Sweet House & Hotel</span>
+            </div>
+          </div>
+          <p class="text-white/60 max-w-md mb-6">
+            A cherished destination in Alawwa for authentic Sri Lankan cuisine, freshly made sweets, 
+            and warm hospitality since generations.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="font-display text-lg font-semibold mb-4">Quick Links</h3>
+          <ul class="space-y-2">
+            <li><a href="#home" class="text-white/60 hover:text-white transition-colors">Home</a></li>
+            <li><a href="#about" class="text-white/60 hover:text-white transition-colors">About Us</a></li>
+            <li><a href="#menu" class="text-white/60 hover:text-white transition-colors">Menu</a></li>
+            <li><a href="#gallery" class="text-white/60 hover:text-white transition-colors">Gallery</a></li>
+            <li><a href="#reviews" class="text-white/60 hover:text-white transition-colors">Reviews</a></li>
+            <li><a href="#contact" class="text-white/60 hover:text-white transition-colors">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="font-display text-lg font-semibold mb-4">Opening Hours</h3>
+          <ul class="space-y-2 text-white/60">
+            <li class="flex justify-between">
+              <span>Monday - Sunday</span>
+            </li>
+            <li class="text-[#D4A853] font-semibold">7:00 AM – 10:30 PM</li>
+          </ul>
+          <div class="mt-6">
+            <a href="tel:+94718667238" class="btn-primary inline-block text-sm">
+              <span>Call Now</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-white/10 mt-12 pt-8 text-center text-white/40 text-sm">
+        <p>&copy; 2024 Jayawardhana Sweet House & Hotel. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Action Buttons -->
+  <div class="fab-container">
+    <button class="fab fab-cart" onclick="openCartModal()" aria-label="View cart">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+      </svg>
+      <span class="cart-badge" id="cartBadge">0</span>
+    </button>
+    <a href="https://wa.me/94740802427" 
+       class="fab fab-whatsapp" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       aria-label="Contact via WhatsApp">
+      <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+    </a>
+    <a href="tel:+94718667238" class="fab fab-call" aria-label="Call us">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+      </svg>
+    </a>
+  </div>
+
+  <!-- Cart Modal Overlay -->
+  <div class="modal-overlay" id="cartOverlay" onclick="closeCartModal()"></div>
+
+  <!-- Cart Modal -->
+  <div class="modal" id="cartModal">
+    <div class="p-6">
+      <div class="flex items-center justify-between mb-6">
+        <h3 class="font-display text-2xl font-bold">Your Order</h3>
+        <button onclick="closeCartModal()" class="w-10 h-10 rounded-full bg-[#F5F0EB] flex items-center justify-center hover:bg-[#E5DCD2] transition-colors" aria-label="Close cart">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Order Items -->
+      <div id="orderItems" class="max-h-60 overflow-y-auto mb-6">
+        <!-- Items populated by JS -->
+      </div>
+
+      <!-- Order Total -->
+      <div class="border-t border-[#E5DCD2] pt-4 mb-6">
+        <div class="flex justify-between items-center">
+          <span class="font-semibold text-lg">Total:</span>
+          <span class="font-display text-2xl font-bold text-[#C4704F]" id="orderTotal">Rs. 0</span>
+        </div>
+      </div>
+
+      <!-- Customer Details Form -->
+      <form id="orderForm" onsubmit="submitOrder(event)">
+        <h4 class="font-semibold mb-4">Delivery Details</h4>
+        
+        <div class="space-y-4">
+          <div>
+            <label class="form-label" for="customerName">Your Name *</label>
+            <input type="text" id="customerName" class="form-input" placeholder="Enter your full name" required>
+          </div>
+
+          <div>
+            <label class="form-label" for="customerPhone">Phone Number *</label>
+            <input type="tel" id="customerPhone" class="form-input" placeholder="e.g., 071 234 5678" required>
+          </div>
+
+          <div>
+            <label class="form-label" for="customerDistrict">District *</label>
+            <select id="customerDistrict" class="form-input" required>
+              <option value="">Select your district</option>
+              <option value="Colombo">Colombo</option>
+              <option value="Gampaha">Gampaha</option>
+              <option value="Kalutara">Kalutara</option>
+              <option value="Kandy">Kandy</option>
+              <option value="Matale">Matale</option>
+              <option value="Nuwara Eliya">Nuwara Eliya</option>
+              <option value="Galle">Galle</option>
+              <option value="Matara">Matara</option>
+              <option value="Hambantota">Hambantota</option>
+              <option value="Jaffna">Jaffna</option>
+              <option value="Kilinochchi">Kilinochchi</option>
+              <option value="Mannar">Mannar</option>
+              <option value="Vavuniya">Vavuniya</option>
+              <option value="Mullaitivu">Mullaitivu</option>
+              <option value="Batticaloa">Batticaloa</option>
+              <option value="Ampara">Ampara</option>
+              <option value="Trincomalee">Trincomalee</option>
+              <option value="Kurunegala">Kurunegala</option>
+              <option value="Puttalam">Puttalam</option>
+              <option value="Anuradhapura">Anuradhapura</option>
+              <option value="Polonnaruwa">Polonnaruwa</option>
+              <option value="Badulla">Badulla</option>
+              <option value="Moneragala">Moneragala</option>
+              <option value="Ratnapura">Ratnapura</option>
+              <option value="Kegalle">Kegalle</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="form-label" for="customerAddress">Delivery Address *</label>
+            <textarea id="customerAddress" class="form-input" rows="3" placeholder="Enter your complete delivery address" required></textarea>
+          </div>
+
+          <div>
+            <label class="form-label" for="orderNotes">Special Instructions (Optional)</label>
+            <textarea id="orderNotes" class="form-input" rows="2" placeholder="Any special requests or notes"></textarea>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-primary w-full mt-6 flex items-center justify-center gap-2" id="submitBtn">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          <span>Send Order via WhatsApp</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <button class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-colors" aria-label="Close lightbox">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+    <img src="" alt="" id="lightboxImg">
+  </div>
+
+  <script>
+    // Initialize variables FIRST
+    const WHATSAPP_NUMBER = '94740802427';
+    let cart = [];
+    let currentCategory = 'all';
+    
+    // DOM Elements - Initialize after DOM is ready
+    let menuGrid, menuTabs, navbar, menuBtn, closeMenuBtn, mobileMenu, mobileLinks;
+    let lightbox, lightboxImg, cartOverlay, cartModal, cartBadge, orderItems, orderTotal;
+    
+    // Menu Data with Images
+    const menuData = [
+      { 
+        id: 1,
+        name: 'String Hoppers (Indi Appa)', 
+        category: 'breakfast', 
+        price: 150, 
+        description: 'Traditional steamed rice noodles served with coconut sambol and curry',
+        image: 'https://images.unsplash.com/photo-1668236543090-82eba5ee5976?w=400&h=300&fit=crop',
+        popular: true
+      },
+      { 
+        id: 2,
+        name: 'Pittu', 
+        category: 'breakfast', 
+        price: 180, 
+        description: 'Steamed rice flour and coconut cylinder with lunu miris',
+        image: 'https://images.unsplash.com/photo-1630383249896-424e482df921?w=400&h=300&fit=crop',
+        popular: false
+      },
+      { 
+        id: 3,
+        name: 'Hoppers (Appa)', 
+        category: 'breakfast', 
+        price: 80, 
+        description: 'Crispy bowl-shaped pancakes with soft center',
+        image: 'https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=400&h=300&fit=crop',
+        popular: true
+      },
+      { 
+        id: 4,
+        name: 'Egg Hoppers', 
+        category: 'breakfast', 
+        price: 120, 
+        description: 'Crispy hoppers with egg cooked in the center',
+        image: 'https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=400&h=300&fit=crop',
+        popular: true
+      },
+      { 
+        id: 5,
+        name: 'Milk Rice (Kiribath)', 
+        category: 'breakfast', 
+        price: 200, 
+        description: 'Creamy rice cooked in coconut milk, served with lunu miris',
+        image: 'https://images.unsplash.com/photo-1512058564366-18510be2db19?w=400&h=300&fit=crop',
+        popular: false
+      },
+      { 
+        id: 6,
+        name: 'Vegetable Rice & Curry', 
+        category: 'rice', 
+        price: 250, 
+        description: 'Traditional Sri Lankan lunch with 4-5 vegetable curries and sambol',
+        image: 'https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=400&h=300&fit=crop',
+        popular: true
+      },
+      { 
+        id: 7,
+        name: 'Chicken Rice & Curry', 
+        category: 'rice', 
+        price: 350, 
+        description: 'Fragrant rice with spicy chicken curry and vegetable sides',
+        image: 'https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=400&h=300&fit=crop',
+        popular: true
+      },
+      { 
+        id: 8,
+        name: 'Fish Rice & Curry', 
+        category: 'rice', 
+        price: 320, 
+        description: 'Fresh fish curry with traditional vegetable accompaniments',
+        image: 'https://images.unsplash.com/photo-1574484284002-952d92456975?w=400&h=300&fit=crop',
+        popular: false
+      },
+      { 
+        id: 9,
+        name: 'Egg Rice & Curry', 
+        category: 'rice', 
+        price: 280, 
+        description: 'Vegetable curries with perfectly boiled egg',
+        image: 'https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=400&h=300&fit=crop',
+        popular: false
+      },
+      { 
+        id: 10,
+        name: 'Kavum', 
+        category: 'sweets', 
+        price: 50, 
+        description: 'Traditional deep-fried sweet made with rice flour and treacle',
+        image: 'https://images.unsplash.com/photo-1559598467-f8b76c8155d0?w=400&h=300&fit=crop',
+        popular: true
+      },
+      { 
+        id: 11,
+        name: 'Kokis', 
+        category: 'sweets', 
+        price: 40, 
+        description: 'Crispy coconut milk sweet, perfect with tea',
+        image: 'https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=400&h=300&fit=crop',
+        popular: true
+      },
+      { 
+        id: 12,
+        name: 'Pani Walalu', 
+        category: 'sweets', 
+        price: 50, 
+        description: 'Syrup-soaked coil sweet, a Sri Lankan favorite',
+        image: 'https://images.unsplash.com/photo-1571115177098-24ec42ed204d?w=400&h=300&fit=crop',
+        popular: false
+      },
+      { 
+        id: 13,
+        name: 'Aasmi', 
+        category: 'sweets', 
+        price: 45, 
+        description: 'Traditional milk sweet with cashew nuts',
+        image: 'https://images.unsplash.com/photo-1548848221-0c2e497ed557?w=400&h=300&fit=crop',
+        popular: false
+      },
+      { 
+        id: 14,
+        name: 'Milk Coffee', 
+        category: 'beverages', 
+        price: 80, 
+        description: 'Creamy Sri Lankan style milk coffee',
+        image: 'https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=400&h=300&fit=crop',
+        popular: true
+      },
+      { 
+        id: 15,
+        name: 'Pure Ceylon Tea', 
+        category: 'beverages', 
+        price: 40, 
+        description: 'World-famous Ceylon tea, freshly brewed',
+        image: 'https://images.unsplash.com/photo-1597318181409-cf64d0b5d8a2?w=400&h=300&fit=crop',
+        popular: true
+      },
+      { 
+        id: 16,
+        name: 'Milk Tea', 
+        category: 'beverages', 
+        price: 60, 
+        description: 'Creamy milk tea with Ceylon tea leaves',
+        image: 'https://images.unsplash.com/photo-1571934811356-5cc061b6821f?w=400&h=300&fit=crop',
+        popular: false
+      },
+      { 
+        id: 17,
+        name: 'Fresh Fruit Juice', 
+        category: 'beverages', 
+        price: 100, 
+        description: 'Seasonal fresh fruit juice',
+        image: 'https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=400&h=300&fit=crop',
+        popular: false
+      },
+      { 
+        id: 18,
+        name: 'Fish Roll', 
+        category: 'shorteats', 
+        price: 80, 
+        description: 'Crispy roll with spicy fish filling',
+        image: 'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=400&h=300&fit=crop',
+        popular: true
+      },
+      { 
+        id: 19,
+        name: 'Egg Roll', 
+        category: 'shorteats', 
+        price: 70, 
+        description: 'Crispy roll with egg filling',
+        image: 'https://images.unsplash.com/photo-1608039829572-28f7e743a9ca?w=400&h=300&fit=crop',
+        popular: false
+      },
+      { 
+        id: 20,
+        name: 'Samosa', 
+        category: 'shorteats', 
+        price: 50, 
+        description: 'Crispy triangular pastry with spiced vegetable filling',
+        image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?w=400&h=300&fit=crop',
+        popular: true
+      },
+      { 
+        id: 21,
+        name: 'Fish Cutlet', 
+        category: 'shorteats', 
+        price: 60, 
+        description: 'Breaded and fried fish croquette',
+        image: 'https://images.unsplash.com/photo-1529042410759-befb1204b468?w=400&h=300&fit=crop',
+        popular: false
+      },
+      { 
+        id: 22,
+        name: 'Chicken Pastry', 
+        category: 'shorteats', 
+        price: 80, 
+        description: 'Flaky pastry with chicken filling',
+        image: 'https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=400&h=300&fit=crop',
+        popular: false
+      },
+    ];
+
+    // Initialize when DOM is ready
+    document.addEventListener('DOMContentLoaded', function() {
+      // Get DOM elements
+      menuGrid = document.getElementById('menuGrid');
+      menuTabs = document.querySelectorAll('.menu-tab');
+      navbar = document.getElementById('navbar');
+      menuBtn = document.getElementById('menuBtn');
+      closeMenuBtn = document.getElementById('closeMenuBtn');
+      mobileMenu = document.getElementById('mobileMenu');
+      mobileLinks = document.querySelectorAll('.mobile-link');
+      lightbox = document.getElementById('lightbox');
+      lightboxImg = document.getElementById('lightboxImg');
+      cartOverlay = document.getElementById('cartOverlay');
+      cartModal = document.getElementById('cartModal');
+      cartBadge = document.getElementById('cartBadge');
+      orderItems = document.getElementById('orderItems');
+      orderTotal = document.getElementById('orderTotal');
+
+      // Initialize menu
+      renderMenu('all');
+      observeElements();
+      setupEventListeners();
+    });
+
+    // Setup Event Listeners
+    function setupEventListeners() {
+      // Menu Tab Click Handler
+      menuTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          menuTabs.forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+          currentCategory = tab.dataset.category;
+          renderMenu(currentCategory);
+        });
+      });
+
+      // Navbar Scroll Effect
+      let lastScroll = 0;
+      window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+        
+        if (currentScroll > 100) {
+          navbar.style.background = 'rgba(26, 22, 18, 0.95)';
+          navbar.style.backdropFilter = 'blur(10px)';
+        } else {
+          navbar.style.background = 'transparent';
+          navbar.style.backdropFilter = 'none';
+        }
+        
+        lastScroll = currentScroll;
+      });
+
+      // Mobile Menu
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+
+      closeMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.remove('active');
+          document.body.style.overflow = '';
+        });
+      });
+
+      // Keyboard support
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          if (lightbox.classList.contains('active')) {
+            closeLightbox();
+          }
+          if (cartModal.classList.contains('active')) {
+            closeCartModal();
+          }
+        }
+      });
+
+      // Smooth scroll
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+    }
+
+    // Render Menu
+    function renderMenu(category) {
+      const filtered = category === 'all' 
+        ? menuData 
+        : menuData.filter(item => item.category === category);
+      
+      menuGrid.innerHTML = filtered.map((item, index) => `
+        <div class="card menu-card overflow-hidden reveal reveal-delay-${(index % 4) + 1}">
+          <div class="menu-card-image">
+            <img src="${item.image}" alt="${item.name}" loading="lazy">
+            ${item.popular ? '<span class="menu-card-badge">Popular</span>' : ''}
+          </div>
+          <div class="p-5">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="font-display text-lg font-semibold leading-tight">${item.name}</h3>
+            </div>
+            <p class="text-[#8B7355] text-sm mb-3 line-clamp-2">${item.description}</p>
+            <div class="flex justify-between items-center">
+              <span class="text-[#C4704F] font-bold text-lg">Rs. ${item.price}</span>
+              <div class="qty-controls">
+                <button class="qty-btn" onclick="updateCart(${item.id}, -1)" aria-label="Decrease quantity">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"/>
+                  </svg>
+                </button>
+                <span class="qty-value" id="qty-${item.id}">${getItemQty(item.id)}</span>
+                <button class="qty-btn" onclick="updateCart(${item.id}, 1)" aria-label="Increase quantity">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      `).join('');
+      
+      observeElements();
+    }
+
+    // Cart Functions
+    function getItemQty(id) {
+      const item = cart.find(i => i.id === id);
+      return item ? item.qty : 0;
+    }
+
+    function updateCart(id, change) {
+      const menuItem = menuData.find(i => i.id === id);
+      if (!menuItem) return;
+
+      const existingItem = cart.find(i => i.id === id);
+      
+      if (existingItem) {
+        existingItem.qty += change;
+        if (existingItem.qty <= 0) {
+          cart = cart.filter(i => i.id !== id);
+        }
+      } else if (change > 0) {
+        cart.push({
+          id: menuItem.id,
+          name: menuItem.name,
+          price: menuItem.price,
+          qty: 1
+        });
+      }
+
+      updateUI();
+    }
+
+    function updateUI() {
+      // Update cart badge
+      const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
+      cartBadge.textContent = totalItems;
+      cartBadge.style.display = totalItems > 0 ? 'flex' : 'none';
+
+      // Update quantity displays
+      cart.forEach(item => {
+        const qtyEl = document.getElementById(`qty-${item.id}`);
+        if (qtyEl) qtyEl.textContent = item.qty;
+      });
+
+      // Reset quantities for items not in cart
+      menuData.forEach(item => {
+        if (!cart.find(c => c.id === item.id)) {
+          const qtyEl = document.getElementById(`qty-${item.id}`);
+          if (qtyEl) qtyEl.textContent = '0';
+        }
+      });
+
+      // Update order summary in modal
+      if (orderItems) {
+        if (cart.length === 0) {
+          orderItems.innerHTML = '<p class="text-center text-[#8B7355] py-8">Your cart is empty. Add items from the menu!</p>';
+        } else {
+          orderItems.innerHTML = cart.map(item => `
+            <div class="order-item">
+              <div>
+                <span class="font-medium">${item.name}</span>
+                <span class="text-[#8B7355] text-sm block">Rs. ${item.price} x ${item.qty}</span>
+              </div>
+              <span class="font-semibold">Rs. ${item.price * item.qty}</span>
+            </div>
+          `).join('');
+        }
+      }
+
+      // Update total
+      const total = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+      if (orderTotal) {
+        orderTotal.textContent = `Rs. ${total}`;
+      }
+    }
+
+    // Modal Functions
+    function openCartModal() {
+      updateUI();
+      cartOverlay.classList.add('active');
+      cartModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeCartModal() {
+      cartOverlay.classList.remove('active');
+      cartModal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    // Submit Order via WhatsApp
+    function submitOrder(event) {
+      event.preventDefault();
+
+      if (cart.length === 0) {
+        alert('Please add items to your cart before ordering!');
+        return;
+      }
+
+      const name = document.getElementById('customerName').value.trim();
+      const phone = document.getElementById('customerPhone').value.trim();
+      const district = document.getElementById('customerDistrict').value;
+      const address = document.getElementById('customerAddress').value.trim();
+      const notes = document.getElementById('orderNotes').value.trim();
+
+      if (!name || !phone || !district || !address) {
+        alert('Please fill in all required fields!');
+        return;
+      }
+
+      // Build order message
+      let message = `NEW ORDER - Jayawardhana Sweet House & Hotel\n`;
+      message += `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n`;
+      
+      message += `CUSTOMER DETAILS:\n`;
+      message += `Name: ${name}\n`;
+      message += `Phone: ${phone}\n`;
+      message += `District: ${district}\n`;
+      message += `Address: ${address}\n\n`;
+      
+      message += `ORDER ITEMS:\n`;
+      message += `─────────────────────\n`;
+      
+      cart.forEach(item => {
+        message += `• ${item.name}\n`;
+        message += `  Qty: ${item.qty} x Rs. ${item.price} = Rs. ${item.price * item.qty}\n`;
+      });
+      
+      const total = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+      
+      message += `─────────────────────\n`;
+      message += `TOTAL: Rs. ${total}\n\n`;
+      
+      if (notes) {
+        message += `SPECIAL INSTRUCTIONS:\n${notes}\n\n`;
+      }
+      
+      message += `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n`;
+      message += `Order placed via website`;
+
+      // Encode message for WhatsApp URL
+      const encodedMessage = encodeURIComponent(message);
+      const whatsappURL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
+
+      // Open WhatsApp
+      window.open(whatsappURL, '_blank');
+
+      // Show success message
+      alert('Thank you for your order! Your order details have been prepared. Please send the message on WhatsApp to complete your order.');
+
+      // Clear cart and close modal
+      cart = [];
+      updateUI();
+      closeCartModal();
+      document.getElementById('orderForm').reset();
+    }
+
+    // Scroll Reveal
+    function observeElements() {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    }
+
+    // Lightbox
+    function openLightbox(element) {
+      const img = element.querySelector('img');
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  </script>
+</body>
+</html>
